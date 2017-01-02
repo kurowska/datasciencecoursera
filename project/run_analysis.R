@@ -7,7 +7,7 @@
 #rm(list=ls())
 
 #set directory with input files
-setwd("~/datasciencecoursera/get_clean_data/project")
+setwd("~/datasciencecoursera/project")
 
 #get the dataset
 filename <- "dataset.zip"
@@ -114,5 +114,5 @@ activity_labels <- read.table("activity_labels.txt") #links labels with their ac
         tidy_data <- ddply(data, .(subjectid, activity), function(x) colMeans(x[, 3:ncol(x)])) 
 
        #export a .txt file with tidy data:
-        write.table(tidy_data, './tidy_data.txt', row.names=TRUE, sep='\t')
+        write.table(tidy_data, './tidy_data.txt', row.names=FALSE, sep='\t')
               
